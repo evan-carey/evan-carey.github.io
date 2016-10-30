@@ -21,7 +21,7 @@ module.exports = (function makeWebpackConfig() {
     };
 
     config.output = {
-        path: getPath('./dist'),
+        path: getPath('/'),
         filename: isProd ? '[name].[hash].js' : '[name].bundle.js',
         chunkFilename: isProd ? '[name].[hash].js' : '[name].bundle.js',
         publicPath: isProd ? '/' : 'http://localhost:8080/'
