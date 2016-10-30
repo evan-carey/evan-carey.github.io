@@ -2,7 +2,7 @@
     <md-nav-item ng-repeat="page in $ctrl.pages" name="{{page.name}}">{{page.name}}</md-nav-item>
 </md-nav-bar>-->
 
-<md-toolbar class="md-toolbar-tools site-content-toolbar md-accent md-hue-1" md-whiteframe="1" layout="row" layout-align="space-between center">
+<md-toolbar class="md-toolbar-tools site-content-toolbar md-primary md-hue-1" md-whiteframe="1" layout="row" layout-align="space-between center">
 	<!-- left -->
 	<div layout="row" layout-align="start center">
 		<md-button class="md-icon-button" ng-if="!$ctrl.hideMenuButton()" aria-label="Side Menu" ng-click="$ctrl.openSidebar('left')">
