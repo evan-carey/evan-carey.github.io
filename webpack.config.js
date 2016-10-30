@@ -6,7 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
-var getPath = function (pathToFile) { return path.resolve(__dirname, pathToFile); }
+var getPath = function(pathToFile) { return path.resolve(__dirname, pathToFile); }
 
 var ENV = process.env.npm_lifecycle_event;
 var isProd = ENV === 'build';
@@ -21,9 +21,9 @@ module.exports = (function makeWebpackConfig() {
     };
 
     config.output = {
-        path: getPath('/'),
-        filename: isProd ? '[name].[hash].js' : '[name].bundle.js',
-        chunkFilename: isProd ? '[name].[hash].js' : '[name].bundle.js',
+        path: getPath('./'),
+        filename: isProd ? '[name].js' : '[name].bundle.js',
+        chunkFilename: isProd ? '[name].js' : '[name].bundle.js',
         publicPath: isProd ? '/' : 'http://localhost:8080/'
 
     };
