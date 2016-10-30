@@ -1,3 +1,37 @@
 {
-    "typescript.tsdk": "./node_modules/typescript/lib"
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "files.exclude": {
+        "**/*.js.map": true,
+        "**/node_modules": true,
+        "dist": true,
+        "index.html": true,
+        "app.css": true,
+        "app.js": true,
+        "vendor.js": true
+    },
+    "search.exclude": {
+        "**/*.js.map": true,
+        "**/node_modules": true,
+        "dist": true,
+        "index.html": true,
+        "app.css": true,
+        "app.js": true,
+        "vendor.js": true
+    },
+    "autoimport.filesToScan": "src/**/*.ts",
+    "autoimport.spaceBetweenBraces": true,
+    "tslint.run": "onSave",
+    "genGetSet.spacedImportLine": true,
+    "genGetSet.filter": true,
+    "genGetSet.ignoredDictionaryList": [
+        "vscode",
+        "tsconfig"
+    ],
+    "genGetSet.pathStringDelimiter": "'",
+    "genGetSet.ignoredNodeLibraries": [
+        "node",
+        "chrome"
+    ],
+    "genGetSet.importTypings": false,
+    "genGetSet.importNode": true
 }

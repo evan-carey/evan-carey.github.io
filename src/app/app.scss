@@ -9,3 +9,17 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+.full-height {
+  height: 100%;
+}
+
+.loader {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  font-size: 24px;
+  display: block;
+  text-align: center;
+  font-weight: 700;
+}

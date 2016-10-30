@@ -1,0 +1,40 @@
+<!--<md-nav-bar md-selected-nav-item="$ctrl.currentPage.name">
+    <md-nav-item ng-repeat="page in $ctrl.pages" name="{{page.name}}">{{page.name}}</md-nav-item>
+</md-nav-bar>-->
+
+<md-toolbar class="md-toolbar-tools site-content-toolbar md-accent md-hue-1" md-whiteframe="1" layout="row" layout-align="space-between center">
+	<!-- left -->
+	<div layout="row" layout-align="start center">
+		<md-button class="md-icon-button" ng-if="!$ctrl.hideMenuButton()" aria-label="Side Menu" ng-click="$ctrl.openSidebar('left')">
+			<md-icon class="menu">menu</md-icon>
+		</md-button>
+	</div>
+
+	<!-- right -->
+	<div layout="row" layout-align="end center">
+		<!--<md-menu md-position-mode="target-right target">
+			<md-button aria-label="Open user menu" ng-click="$mdOpenMenu()" md-menu-origin>Contact</md-button>
+			<md-menu-content>
+				<md-menu-item>
+					<md-button>
+						<md-icon>settings</md-icon>
+						<span md-menu-align-target>Settings</span>
+					</md-button>
+				</md-menu-item>
+				<md-menu-item>
+					<md-button>
+						<md-icon>person</md-icon>
+						<span>Profile</span>
+					</md-button>
+				</md-menu-item>
+				<md-divider></md-divider>
+				<md-menu-item>
+					<md-button ng-click="">
+						<md-icon>exit_to_app</md-icon>
+						<span md-menu-align-target>Logout</span>
+					</md-button>
+				</md-menu-item>
+			</md-menu-content>
+		</md-menu>-->
+	</div>
+</md-toolbar>

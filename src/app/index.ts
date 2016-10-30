@@ -29,8 +29,8 @@ function themeConfig($mdThemingProvider: ng.material.IThemingProvider) {
     "ngInject";
 
     $mdThemingProvider.theme('default')
-        .primaryPalette('blue')
-        .accentPalette('green');
+        .primaryPalette('red')
+        .accentPalette('red');
 }
 
 export const App: string = module('app', [
