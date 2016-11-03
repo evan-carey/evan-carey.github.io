@@ -1,5 +1,8 @@
 import { IMenuItem, SidebarService } from './sidebar.service';
 import { NavService } from '../nav/nav.service';
+
+import "./sidebar.scss";
+
 export class SidebarComponent implements ng.IComponentOptions {
 
     constructor(

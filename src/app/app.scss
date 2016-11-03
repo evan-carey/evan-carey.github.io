@@ -23,3 +23,102 @@ html, body {
   text-align: center;
   font-weight: 700;
 }
+
+.center-align {
+  position: absolute;
+  top: calc(50% - 9px);
+  left: calc(50% - 109px);
+}
+
+#loadingProgressG{
+	width:218px;
+	height:17px;
+	overflow:hidden;
+	background-color:rgba(0,0,0,0.48);
+	margin:auto;
+	border-radius:8px;
+		-o-border-radius:8px;
+		-ms-border-radius:8px;
+		-webkit-border-radius:8px;
+		-moz-border-radius:8px;
+}
+
+.loadingProgressG{
+	background-color:rgba(255,255,255,0.82);
+	margin-top:0;
+	margin-left:-218px;
+	animation-name:bounce_loadingProgressG;
+		-o-animation-name:bounce_loadingProgressG;
+		-ms-animation-name:bounce_loadingProgressG;
+		-webkit-animation-name:bounce_loadingProgressG;
+		-moz-animation-name:bounce_loadingProgressG;
+	animation-duration:1.5s;
+		-o-animation-duration:1.5s;
+		-ms-animation-duration:1.5s;
+		-webkit-animation-duration:1.5s;
+		-moz-animation-duration:1.5s;
+	animation-iteration-count:infinite;
+		-o-animation-iteration-count:infinite;
+		-ms-animation-iteration-count:infinite;
+		-webkit-animation-iteration-count:infinite;
+		-moz-animation-iteration-count:infinite;
+	animation-timing-function:linear;
+		-o-animation-timing-function:linear;
+		-ms-animation-timing-function:linear;
+		-webkit-animation-timing-function:linear;
+		-moz-animation-timing-function:linear;
+	width:218px;
+	height:17px;
+}
+
+
+
+@keyframes bounce_loadingProgressG{
+	0%{
+		margin-left:-218px;
+	}
+
+	100%{
+		margin-left:218px;
+	}
+}
+
+@-o-keyframes bounce_loadingProgressG{
+	0%{
+		margin-left:-218px;
+	}
+
+	100%{
+		margin-left:218px;
+	}
+}
+
+@-ms-keyframes bounce_loadingProgressG{
+	0%{
+		margin-left:-218px;
+	}
+
+	100%{
+		margin-left:218px;
+	}
+}
+
+@-webkit-keyframes bounce_loadingProgressG{
+	0%{
+		margin-left:-218px;
+	}
+
+	100%{
+		margin-left:218px;
+	}
+}
+
+@-moz-keyframes bounce_loadingProgressG{
+	0%{
+		margin-left:-218px;
+	}
+
+	100%{
+		margin-left:218px;
+	}
+}

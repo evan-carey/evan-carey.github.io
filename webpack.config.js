@@ -6,7 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
-var getPath = function(pathToFile) { return path.resolve(__dirname, pathToFile); }
+var getPath = function (pathToFile) { return path.resolve(__dirname, pathToFile); }
 
 var ENV = process.env.npm_lifecycle_event;
 var isProd = ENV === 'build';
@@ -65,7 +65,7 @@ module.exports = (function makeWebpackConfig() {
             {
                 // ASSET LOADER
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'file?name=assets/[name].[hash].[ext]'
+                loader: 'file?name=assets/[name].[ext]'
             },
             {
                 // HTML LOADER

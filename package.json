@@ -4,7 +4,7 @@
   "description": "Evan Carey's personal website",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && webpack --bail --progress --profile --NODE_ENV=production",
+    "build": "webpack --bail --progress --profile --NODE_ENV=production",
     "server": "webpack-dev-server --history-api-fallback --inline --hot --progress --NODE_ENV=dev",
     "start": "npm run server"
   },
