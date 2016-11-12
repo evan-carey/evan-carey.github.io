@@ -1,0 +1,47 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Hybrid",
+            "type": "composite",
+            "configurationNames": [
+                "Node, attach",
+                "Chrome, launch"
+            ]
+        },
+        {
+            "name": "Node, attach",
+            "type": "node2",
+            "request": "attach",
+            "port": 9229,
+            "diagnosticLogging": true
+        },
+        {
+            "name": "Chrome, launch",
+            "type": "chrome",
+            "request": "launch",
+            "port": 9222,
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceRoot}",
+            "diagnosticLogging": true,
+            "sourceMaps": true,
+            "userDataDir": "${workspaceRoot}/.vscode/chrome"
+        },
+        {
+            "name": "Launch Chrome against localhost, with sourcemaps",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8080",
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "name": "Attach to Chrome, with sourcemaps",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
+}
