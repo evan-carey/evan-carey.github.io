@@ -155,8 +155,9 @@ export const App: string = module('app', [
     .name;
 
 function analyticsConfig($window: ng.IWindowService, $rootScope: ng.IRootScopeService, $location: ng.ILocationService) {
-    $window['ga']('create', 'UA-43021202-2', 'auto');
+    "ngInject";
 
+    $window['ga']('create', 'UA-43021202-2', 'auto');
     $rootScope.$on('$stateChangeSuccess', event => {
         $window['ga']('send', 'pageview', $location.path());
     });
