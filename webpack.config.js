@@ -16,8 +16,8 @@ module.exports = (function makeWebpackConfig() {
     var config = {};
 
     config.entry = {
-        'app': './src/app/index.ts',
-        'vendor': './src/app/vendor.ts'
+        'app': './src/main.ts',
+        'polyfills': './src/polyfills.ts'
     };
 
     config.output = {
@@ -37,9 +37,9 @@ module.exports = (function makeWebpackConfig() {
             {
                 // TS LOADER
                 test: /\.ts$/,
-                loader: 'ng-annotate!awesome-typescript-loader',
+                loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
                 include: [
-                    getPath("src/app")
+                    getPath("src")
                 ]
             },
             {
@@ -47,7 +47,7 @@ module.exports = (function makeWebpackConfig() {
                 test: /\.js$/,
                 loader: 'babel',
                 include: [
-                    getPath("src/app")
+                    getPath("src")
                 ]
             },
             {
@@ -85,7 +85,7 @@ module.exports = (function makeWebpackConfig() {
 
     config.plugins = [
         new CommonsChunkPlugin({
-            names: ['vendor'],
+            names: ['app', 'polyfills'],
             minChunks: Infinity
         }),
 

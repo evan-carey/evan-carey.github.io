@@ -8,12 +8,11 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
-        "moduleResolution": "node",
-        "noEmitHelpers": true
+        "moduleResolution": "node"
     },
     "compileOnSave": false,
     "include": [
-        "src/app/**/*"
+        "src/**/*"
     ],
     "exclude": [
         "node_modules",

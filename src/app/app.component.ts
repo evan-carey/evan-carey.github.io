@@ -1,35 +1,12 @@
-/**
- * App Component
- *
- * @export
- * @class AppComponent
- * @implements {ng.IComponentOptions}
- */
-export class AppComponent implements ng.IComponentOptions {
-    template: string;
-    controller: ng.IControllerConstructor;
+import { Component } from '@angular/core';
+import './app.scss';
 
-    constructor() {
-        this.template = require("./app.html");
-        this.controller = AppController;
-    }
-};
-
-/**
- * App Controller
- *
- * @class AppController
- * @implements {ng.IComponentController}
- */
-export class AppController implements ng.IComponentController {
-
-    constructor() {
-        "ngInject";
-    }
-
-    $onInit() {
+@Component({
+    selector: 'ec-app',
+    templateUrl: './app.html'
+})
+export class AppComponent {
+    ngOnInit() {
 
     }
-
-    $onChanges(changes: ng.IOnChangesObject) { }
 }

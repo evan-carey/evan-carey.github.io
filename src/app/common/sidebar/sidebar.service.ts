@@ -1,3 +1,5 @@
+import { Injectable } from '@angular/core';
+
 export interface IMenuItem {
     label: string;
     priority: number;
@@ -25,6 +27,7 @@ export class MenuChildItem implements IMenuChildItem {
     constructor(public label: string, public state: string, public priority: number = 0, public icon?: string) { }
 }
 
+@Injectable()
 export class SidebarService {
     private _menuItems: Array<IMenuItem>;
 

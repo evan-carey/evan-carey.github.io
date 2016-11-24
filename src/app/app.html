@@ -1,19 +1,5 @@
-<div layout="row" layout-align="start stretch" class="full-height">
-	<!--<div ui-view="sidebar"></div>-->
-	<!--<sidebar group="$ctrl.group"></sidebar>-->
-	<md-sidenav md-component-id="left" class="md-sidenav-left site-sidenav" md-whiteframe="2" md-is-locked-open="$mdMedia('gt-sm')">
-		<sidebar></sidebar>
-		<!--<div ui-view="sidebarLeft"></div>-->
+<md-sidenav-layout>
+	<md-sidenav align="start" mode="over">
+		<ec-sidebar></ec-sidebar>
 	</md-sidenav>
-	<div layout="column" layout-align="start stretch" flex>
-		<nav></nav>
-		<!--<div ui-view="nav"></div>-->
-
-		<!-- content -->
-		<div class="content">
-			<ui-view></ui-view>
-		</div>
-
-		<!--<footer></footer>-->
-	</div>
-</div>
+</md-sidenav-layout>
