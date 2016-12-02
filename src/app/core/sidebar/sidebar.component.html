@@ -1,0 +1,4 @@
+<header>Evan Carey</header>
+<ul>
+    <li *ngFor="let item in menuItems" [routerLink]="item.link" routerLinkActive="router-link-active">{{item.caption}}</li>
+</ul>

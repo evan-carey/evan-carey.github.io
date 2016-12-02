@@ -1,0 +1,83 @@
+@import '~@angular/material/core/theming/all-theme';
+
+@include md-core();
+
+$ec-darkgrey: (
+    0: #ffffff,
+    50: #b8bdbd,
+    100: #909898,
+    200: #747d7d,
+    300: #515858,
+    400: #434848,
+    500: #343838,
+    600: #252828,
+    700: #171818,
+    800: #080808,
+    900: #000000,
+    A100: #b8bdbd,
+    A200: #909898,
+    A400: #434848,
+    A700: #171818,
+    contrast: (
+        0: $black-87-opacity,
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: $black-87-opacity,
+        600: $white-87-opacity,
+        700: $white-87-opacity,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        1000: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: $white-87-opacity,
+    )
+);
+
+$ec-accent: (
+    50: #75f0ff,
+    100: #29e7ff,
+    200: #00d5f0,
+    300: #0095a8,
+    400: #007a8a,
+    500: #005f6b,
+    600: #00444c,
+    700: #00292e,
+    800: #000d0f,
+    900: #000000,
+    A100: #75f0ff,
+    A200: #29e7ff,
+    A400: #007a8a,
+    A700: #00292e,
+    contrast: (
+        0: $black-87-opacity,
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: $black-87-opacity,
+        600: $white-87-opacity,
+        700: $white-87-opacity,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        1000: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: $black-87-opacity,
+        A400: $black-87-opacity,
+        A700: $white-87-opacity,
+    )
+);
+
+$ec-app-primary: md-palette($ec-darkgrey);
+$ec-app-accent: md-palette($ec-accent);
+
+$ec-app-warn: md-palette($md-red);
+
+$ec-app-theme: md-light-theme($ec-app-primary, $ec-app-accent, $ec-app-warn);
+
+@include angular-material-theme($ec-app-theme);

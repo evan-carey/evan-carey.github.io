@@ -30,8 +30,15 @@ export class MenuChildItem implements IMenuChildItem {
 @Injectable()
 export class SidebarService {
     private _menuItems: Array<IMenuItem>;
+    private _isSidebarOpen: boolean;
 
     constructor() {
+        // this.menuItems = [
+        //     new MenuItem('About', ['/about']),
+        //     new MenuItem('Projects', ['/projects']),
+        //     new MenuItem('Blog', ['/blog']),
+        //     new MenuItem('GitHub', ['https://github.com/evan-carey'])
+        // ];
         this.menuItems = new Array<IMenuItem>();
     }
 
@@ -45,6 +52,18 @@ export class SidebarService {
 
     public set menuItems(value: Array<IMenuItem>) {
         this._menuItems = value;
+    }
+
+    public get isSidebarOpen(): boolean {
+        return this._isSidebarOpen;
+    }
+
+    public set isSidebarOpen(value: boolean) {
+        this._isSidebarOpen = value;
+    }
+
+    public toggleSidebar() {
+
     }
 
 

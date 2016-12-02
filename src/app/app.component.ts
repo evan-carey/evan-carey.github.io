@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import './app.scss';
+// import './app.scss';
 
 @Component({
     selector: 'ec-app',
-    templateUrl: './app.html'
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.css']
 })
-export class AppComponent {
-    ngOnInit() {
-
-    }
-}
+export class AppComponent { }
