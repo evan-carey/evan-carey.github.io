@@ -1,4 +1,9 @@
-<header>Evan Carey</header>
-<ul>
-    <li *ngFor="let item in menuItems" [routerLink]="item.link" routerLinkActive="router-link-active">{{item.caption}}</li>
-</ul>
+<header class="sidebar-header md-primary">
+    <div class="header-pic"></div>
+</header>
+<!--<md-toolbar color="primary">
+    <h1>Evan Carey</h1>
+</md-toolbar>-->
+<div *ngFor="let item of menuItems">
+    <a [routerLink]="item.link" routerLinkActive="router-link-active">{{item.caption}}</a>
+</div>

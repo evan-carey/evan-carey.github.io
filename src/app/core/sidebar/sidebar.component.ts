@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IMenuItem, SidebarService } from './sidebar.service';
 
 import "./sidebar.scss";
 
@@ -18,7 +17,7 @@ class MenuItem {
 export class SidebarComponent implements OnInit {
     menuItems: Array<MenuItem>;
 
-    constructor(private sidebarService: SidebarService) { }
+    constructor() { }
 
     ngOnInit() {
         this.menuItems = [
