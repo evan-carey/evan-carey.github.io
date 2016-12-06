@@ -16,21 +16,22 @@ module.exports = (function makeWebpackConfig() {
     var config = {};
 
     config.entry = {
-        'app': './src/main.ts',
-        'polyfills': './src/polyfills.ts'
+        'polyfills': './src/polyfills.ts',
+        'vendor': './src/vendor.ts',
+        'app': './src/main.ts'
     };
 
     config.output = {
         path: getPath('./'),
         filename: isProd ? '[name].js' : '[name].bundle.js',
-        chunkFilename: isProd ? '[name].js' : '[name].bundle.js',
+        chunkFilename: isProd ? '[name].js' : '[name].chunk.js',
         publicPath: isProd ? '/' : 'http://localhost:8080/'
 
     };
 
-    config.devtool = 'source-map';
+    config.devtool = isProd ? 'source-map' : 'source-map';
     config.resolve = {
-        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
+        extensions: ['', '.ts', '.js', '.json', '.scss', '.html']
     };
     config.module = {
         loaders: [
@@ -51,17 +52,27 @@ module.exports = (function makeWebpackConfig() {
                 ]
             },
             {
-                // SCSS LOADER - generates a separate CSS file, and adds the link to <head>
+                // JSON LOADER
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
+                // CSS
+                test: /\.css$/,
+                loader: isProd ? ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css-loader', 'postcss-loader'] }) : 'style!css'
+            },
+            {
+                // SCSS - all css outside of src/app will be bundled in an external css file
                 test: /\.scss$/,
+                exclude: getPath("src/app"),
+                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: ['css-loader', 'postcss-loader', 'sass-loader'] })
+            },
+            {
+                // SCSS - all css in src/app files will be merged into js files
+                test: /\.scss$/,
+                include: getPath("src/app"),
                 loader: isProd ? ExtractTextPlugin.extract('style', 'css!postcss!sass') : 'style!css!sass'
             },
-            /**
-             * To keep CSS bundled in with the generated JS, uncomment this section
-             */
-            // {
-            //     test: /\.scss$/,
-            //     loader: 'style!css!sass'
-            // },
             {
                 // ASSET LOADER
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -85,20 +96,27 @@ module.exports = (function makeWebpackConfig() {
 
     config.plugins = [
         new CommonsChunkPlugin({
-            names: ['app', 'polyfills'],
+            names: ['vendor', 'polyfills'],
             minChunks: Infinity
         }),
 
         new HtmlWebpackPlugin({
             template: getPath('./src/index.html'),
-            inject: 'body'
+            inject: 'body',
+            chunksSortMode: 'dependency'
+        }),
+
+        new webpack.DefinePlugin({
+            '__ENV__': {
+                'ENV': JSON.stringify(ENV)
+            }
         })
     ];
 
     if (isProd) {
         config.plugins.push(
             // Create separate CSS file
-            new ExtractTextPlugin('app.css'),
+            new ExtractTextPlugin('css/[name].css'),
 
             // Dedupe modules in the output
             new webpack.optimize.DedupePlugin(),
@@ -108,10 +126,10 @@ module.exports = (function makeWebpackConfig() {
         );
     }
 
-
+    // Dev server configuration
     config.devServer = {
         contentBase: './src'
-    }
+    };
 
     return config;
 })();

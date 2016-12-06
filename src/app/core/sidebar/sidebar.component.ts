@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import "./sidebar.scss";
-// import "./../../img/GitHub-Mark.svg";
-
+import './sidebar.scss';
 
 class MenuItem {
     constructor(
@@ -15,7 +13,7 @@ class MenuItem {
 
 @Component({
     selector: 'ec-sidebar',
-    templateUrl: './sidebar.component.html',
+    templateUrl: './sidebar.component.html'
 
 })
 export class SidebarComponent implements OnInit {

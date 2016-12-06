@@ -1,21 +1,21 @@
 {
     "typescript.tsdk": "./node_modules/typescript/lib",
     "files.exclude": {
-        "**/*.js.map": true,
+        "**/*.map": true,
         "**/node_modules": true,
-        "dist": true,
         "index.html": true,
         "app.css": true,
         "app.js": true,
+        "polyfills.js": true,
         "vendor.js": true
     },
     "search.exclude": {
-        "**/*.js.map": true,
+        "**/*.map": true,
         "**/node_modules": true,
-        "dist": true,
         "index.html": true,
         "app.css": true,
         "app.js": true,
+        "polyfills.js": true,
         "vendor.js": true
     },
     "autoimport.filesToScan": "src/**/*.ts",
