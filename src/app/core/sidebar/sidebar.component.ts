@@ -1,13 +1,15 @@
-import { SidebarService } from './sidebar.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import "./sidebar.scss";
+// import "./../../img/GitHub-Mark.svg";
+
 
 class MenuItem {
     constructor(
         public caption: string,
         public link: any[],
-        public icon?: string
+        public icon?: string,
+        public iconSvgSrc?: string,
     ) { }
 }
 
@@ -19,22 +21,17 @@ class MenuItem {
 export class SidebarComponent implements OnInit {
     menuItems: Array<MenuItem>;
 
-    isSidebarOpened: boolean;
-
-    constructor(private sidebarService: SidebarService) {
-        this.isSidebarOpened = sidebarService.isSidebarOpen;
+    constructor() {
     }
 
     ngOnInit() {
         this.menuItems = [
-            new MenuItem('About', ['/about']),
-            new MenuItem('Projects', ['/projects']),
-            new MenuItem('Blog', ['/blog']),
-            new MenuItem('GitHub', ['https://github.com/evan-carey'])
+            new MenuItem('Home', ['/home'], 'home'),
+            new MenuItem('About', ['/about'], 'info'),
+            new MenuItem('Projects', ['/projects'], 'code'),
+            new MenuItem('Blog', ['/blog'], 'chat'),
+            new MenuItem('GitHub', ['https://github.com/evan-carey'], '')
         ];
     }
 
-    onResize(event) {
-        console.log(event.target.innerWidth);
-    }
 }

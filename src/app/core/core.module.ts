@@ -1,15 +1,14 @@
-import { MdSidenavModule, MdIconModule, MdToolbarModule, MdButtonModule } from '@angular/material';
+import { MdSidenavModule, MdIconModule, MdToolbarModule, MdButtonModule, MdListModule } from '@angular/material';
 import { NavComponent } from './nav/nav.component';
-import { SidebarService } from './sidebar/sidebar.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { SidebarComponent } from './../core/sidebar/sidebar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
     imports: [
-        RouterModule, CommonModule, MdSidenavModule, MdIconModule, MdToolbarModule, MdButtonModule
+        RouterModule, CommonModule, MdSidenavModule, MdIconModule, MdToolbarModule, MdButtonModule, MdListModule
     ],
     exports: [
         RouterModule,
@@ -17,6 +16,6 @@ import { SidebarComponent } from './../core/sidebar/sidebar.component';
         [SidebarComponent, NavComponent]
     ],
     declarations: [SidebarComponent, NavComponent],
-    providers: [SidebarService],
+    providers: [],
 })
 export class CoreModule { }

@@ -10,3 +10,11 @@
     height: 320px;
     /*border-radius: 3px;*/
 }
+
+md-sidenav {
+    .md-list-avatar {
+        md-icon {
+            height: auto !important;
+        }
+    }
+}
