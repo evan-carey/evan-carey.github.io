@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
         HttpModule,
         MaterialModule.forRoot(),
         AppRoutingModule,
-        CoreModule
+        CoreModule,
     ],
     declarations: [AppComponent],
     providers: [],

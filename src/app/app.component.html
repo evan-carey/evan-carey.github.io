@@ -1,9 +1,9 @@
 <md-sidenav-layout class="full-height">
-	<md-sidenav align="start" mode="over" opened="true">
+	<md-sidenav align="start" [mode]="sidenav.mode">
 		<ec-sidebar></ec-sidebar>
 	</md-sidenav>
 	<main>
-		<md-toolbar></md-toolbar>
+		<ec-nav [sidenav]="sidenav" [showMenuButton]="sidenav._modeOver"></ec-nav>
 		<section>
 			<div class="page-content">
 				<router-outlet></router-outlet>

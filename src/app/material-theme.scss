@@ -22,10 +22,10 @@ $ec-darkgrey: (
         0: $black-87-opacity,
         50: $black-87-opacity,
         100: $black-87-opacity,
-        200: $black-87-opacity,
-        300: $black-87-opacity,
-        400: $black-87-opacity,
-        500: $black-87-opacity,
+        200: $white-87-opacity,
+        300: $white-87-opacity,
+        400: $white-87-opacity,
+        500: $white-87-opacity,
         600: $white-87-opacity,
         700: $white-87-opacity,
         800: $white-87-opacity,
@@ -33,7 +33,7 @@ $ec-darkgrey: (
         1000: $white-87-opacity,
         A100: $black-87-opacity,
         A200: $black-87-opacity,
-        A400: $black-87-opacity,
+        A400: $white-87-opacity,
         A700: $white-87-opacity,
     )
 );

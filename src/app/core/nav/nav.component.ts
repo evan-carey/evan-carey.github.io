@@ -1,18 +1,26 @@
-// import { SidebarService } from './../../core/sidebar/sidebar.service';
-import { Component, OnInit } from '@angular/core';
 import { MdSidenav } from '@angular/material';
+import { SidebarService } from './../sidebar/sidebar.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'ec-nav',
-    templateUrl: './nav.html'
+    templateUrl: './nav.component.html',
+    // providers: [MdSidenav]
 })
 export class NavComponent implements OnInit {
-    constructor(private mdSidebar: MdSidenav) { }
+    @Input() sidenav: MdSidenav;
+    @Input() showMenuButton: boolean;
+
+    constructor(
+        // private mdSidenav: MdSidenav,
+        private sidebarService: SidebarService) { }
 
     ngOnInit() { }
 
-    openSidebar(navId: string) {
-        _.debounce(() => this.mdSidebar.toggle(), 250)();
+    toggleSidenav(navId: string) {
+        this.sidebarService.toggleSidebar();
+        // _.debounce(() => this.sidenav.toggle(), 250)();
+        this.sidenav.toggle();
     }
 
     hideMenuButton() {

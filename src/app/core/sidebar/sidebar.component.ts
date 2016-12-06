@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { SidebarService } from './sidebar.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import "./sidebar.scss";
 
@@ -12,12 +13,17 @@ class MenuItem {
 
 @Component({
     selector: 'ec-sidebar',
-    templateUrl: './sidebar.component.html'
+    templateUrl: './sidebar.component.html',
+
 })
 export class SidebarComponent implements OnInit {
     menuItems: Array<MenuItem>;
 
-    constructor() { }
+    isSidebarOpened: boolean;
+
+    constructor(private sidebarService: SidebarService) {
+        this.isSidebarOpened = sidebarService.isSidebarOpen;
+    }
 
     ngOnInit() {
         this.menuItems = [
@@ -26,5 +32,9 @@ export class SidebarComponent implements OnInit {
             new MenuItem('Blog', ['/blog']),
             new MenuItem('GitHub', ['https://github.com/evan-carey'])
         ];
+    }
+
+    onResize(event) {
+        console.log(event.target.innerWidth);
     }
 }
