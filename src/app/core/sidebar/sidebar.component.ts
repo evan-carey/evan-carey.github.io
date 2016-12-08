@@ -39,8 +39,8 @@ export class SidebarComponent implements OnInit {
         ];
 
         this.externalLinks = [
-            new ExternalLink('LinkedIn', 'https://linkedin.com/in/evancarey', '/img/linkedin.svg'),
-            new ExternalLink('GitHub', 'https://github.com/evan-carey', '/img/mark-github.svg')
+            new ExternalLink('LinkedIn', 'https://linkedin.com/in/evancarey', require('../../../img/linkedin.svg')),
+            new ExternalLink('GitHub', 'https://github.com/evan-carey', require('../../../img/mark-github.svg'))
 
         ]
     }
