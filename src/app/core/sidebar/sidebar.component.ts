@@ -7,7 +7,14 @@ class MenuItem {
         public caption: string,
         public link: any[],
         public icon?: string,
-        public iconSvgSrc?: string,
+    ) { }
+}
+
+class ExternalLink {
+    constructor(
+        public caption: string,
+        public link: string,
+        public iconSvgSrc: string
     ) { }
 }
 
@@ -18,6 +25,7 @@ class MenuItem {
 })
 export class SidebarComponent implements OnInit {
     menuItems: Array<MenuItem>;
+    externalLinks: Array<ExternalLink>;
 
     constructor() {
     }
@@ -27,9 +35,14 @@ export class SidebarComponent implements OnInit {
             new MenuItem('Home', ['/home'], 'home'),
             new MenuItem('About', ['/about'], 'info'),
             new MenuItem('Projects', ['/projects'], 'code'),
-            new MenuItem('Blog', ['/blog'], 'chat'),
-            new MenuItem('GitHub', ['https://github.com/evan-carey'], '')
+            // new MenuItem('Blog', ['/blog'], 'chat'),
         ];
+
+        this.externalLinks = [
+            new ExternalLink('LinkedIn', 'https://linkedin.com/in/evancarey', '/img/linkedin.svg'),
+            new ExternalLink('GitHub', 'https://github.com/evan-carey', '/img/mark-github.svg')
+
+        ]
     }
 
 }
