@@ -16,8 +16,8 @@ module.exports = (function makeWebpackConfig() {
     var config = {};
 
     config.entry = {
-        'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor.ts',
+        'polyfills': './src/polyfills.ts',
         'app': './src/main.ts'
     };
 
@@ -96,7 +96,10 @@ module.exports = (function makeWebpackConfig() {
 
     config.plugins = [
         new CommonsChunkPlugin({
-            names: ['vendor', 'polyfills'],
+            names: [
+                'vendor',
+                'polyfills',
+            ],
             minChunks: Infinity
         }),
 

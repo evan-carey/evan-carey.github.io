@@ -1,3 +1,4 @@
+import { Router, Event, NavigationStart } from '@angular/router';
 import { MdSidenav } from '@angular/material';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
@@ -14,7 +15,7 @@ import './material-theme.scss';
 export class AppComponent implements OnInit {
     @ViewChild(MdSidenav) sidenav: MdSidenav;
 
-    constructor() {
+    constructor(private router: Router) {
     }
 
     ngOnInit() {
@@ -26,6 +27,8 @@ export class AppComponent implements OnInit {
             this.sidenav.opened = false;
         }
 
+        this.onRouteChange();
+
     }
 
     onResize(event: any) {
@@ -36,5 +39,13 @@ export class AppComponent implements OnInit {
             this.sidenav.mode = "over";
             this.sidenav.close();
         }
+    }
+
+    onRouteChange() {
+        this.router.events.subscribe((event: Event) => {
+            if (event instanceof NavigationStart && this.sidenav.mode === "over") {
+                this.sidenav.close();
+            }
+        })
     }
 }

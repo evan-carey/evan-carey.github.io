@@ -33,7 +33,7 @@ export class SidebarComponent implements OnInit {
     ngOnInit() {
         this.menuItems = [
             new MenuItem('Home', ['/home'], 'home'),
-            new MenuItem('About', ['/about'], 'info'),
+            // new MenuItem('About', ['/about'], 'info'),
             new MenuItem('Projects', ['/projects'], 'code'),
             // new MenuItem('Blog', ['/blog'], 'chat'),
         ];
