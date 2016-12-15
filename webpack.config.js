@@ -109,11 +109,7 @@ module.exports = (function makeWebpackConfig() {
             chunksSortMode: 'dependency'
         }),
 
-        new webpack.DefinePlugin({
-            '__ENV__': {
-                'ENV': JSON.stringify(ENV)
-            }
-        })
+
     ];
 
     if (isProd) {
@@ -125,8 +121,26 @@ module.exports = (function makeWebpackConfig() {
             new webpack.optimize.DedupePlugin(),
 
             // Minifiy all JS, switch loaders to minimizing mode
-            new webpack.optimize.UglifyJsPlugin()
+            new webpack.optimize.UglifyJsPlugin(),
+
+            new webpack.DefinePlugin({
+                '__ENV__': {
+                    'ENV': JSON.stringify('production'),
+                    'PROD': JSON.stringify(true),
+                    'DEV': JSON.stringify(false)
+                }
+            })
         );
+    } else {
+        config.plugins.push(
+            new webpack.DefinePlugin({
+                '__ENV__': {
+                    'ENV': JSON.stringify('development'),
+                    'PROD': JSON.stringify(false),
+                    'DEV': JSON.stringify(true)
+                }
+            })
+        )
     }
 
     // Dev server configuration
