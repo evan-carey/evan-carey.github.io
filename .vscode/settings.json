@@ -20,7 +20,6 @@
     },
     "autoimport.filesToScan": "src/**/*.ts",
     "autoimport.spaceBetweenBraces": true,
-    "tslint.run": "onSave",
     "genGetSet.spacedImportLine": true,
     "genGetSet.filter": true,
     "genGetSet.ignoredDictionaryList": [
