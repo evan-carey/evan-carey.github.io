@@ -2,19 +2,40 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
+        "moduleResolution": "node",
         "noImplicitAny": false,
         "removeComments": true,
         "noLib": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
-        "moduleResolution": "node"
+        "noEmit": true,
+        "strictNullChecks": false,
+        "baseUrl": "./src",
+        "paths": {},
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "types": [
+            "node",
+            "hammerjs"
+        ]
     },
     "compileOnSave": false,
     "include": [
         "src/**/*"
     ],
     "exclude": [
-        "node_modules"
-    ]
+        "node_modules",
+        "src/**/*.spec.ts",
+        "src/**/*.e2e.ts"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "useWebpackText": true
+    },
+    "buildOnSave": false
 }

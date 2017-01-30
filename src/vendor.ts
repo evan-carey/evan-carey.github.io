@@ -8,6 +8,7 @@ import '@angular/router';
 
 // Angular Material
 import '@angular/material';
+import 'hammerjs';
 
 // RxJS
 import './app/core/rxjs-extensions';

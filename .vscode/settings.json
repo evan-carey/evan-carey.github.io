@@ -18,9 +18,11 @@
         "polyfills.js": true,
         "vendor.js": true
     },
+    "tslint.run": "onSave",
     "autoimport.filesToScan": "src/**/*.ts",
     "autoimport.spaceBetweenBraces": true,
     "genGetSet.spacedImportLine": true,
+    "genGetSet.scanOnSave": true,
     "genGetSet.filter": true,
     "genGetSet.ignoredDictionaryList": [
         "vscode",
