@@ -10,8 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { ProjectsService } from './projects/projects.service';
 
-
 import { CoreModule } from './core/core.module';
+
 
 @NgModule({
     imports: [

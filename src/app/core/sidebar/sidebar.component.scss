@@ -18,12 +18,14 @@
     }
 }
 
-md-sidenav md-nav-list {
-    md-icon[md-list-avatar] {
-        &.align-left {
-            width: 24px;
-            height: 24px;
-            margin-right: 16px;
-        }
-    }
+.sidebar-icon {
+    width: 24px !important;
+    height: 24px !important;
+    margin-right: 16px;
+
+}
+
+.router-link-active {
+    background: rgba(0, 0, 0, 0.07);
+    font-weight: 600;
 }

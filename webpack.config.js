@@ -35,7 +35,7 @@ module.exports = function makeWebpackConfig() {
 
     config.output = {
         path: getPath('./'),
-        filename: '[name].js',
+        filename: '[name].bundle.js',
         chunkFilename: '[id].chunk.js',
         publicPath: isProd ? '/' : 'http://localhost:8080/'
 
@@ -203,18 +203,15 @@ module.exports = function makeWebpackConfig() {
             },
 
             // PostCSS
-            postcss: [
-                autoprefixer({ browsers: ['last 2 version'] })
-            ]
+            // postcss: [
+            //     autoprefixer({ browsers: ['last 2 version'] })
+            // ]
         })
     ];
 
     if (isProd) {
         config.plugins.push(
 
-
-            // Dedupe modules in the output
-            new webpack.optimize.DedupePlugin(),
 
             // Minifiy all JS, switch loaders to minimizing mode
             new UglifyJsPlugin({

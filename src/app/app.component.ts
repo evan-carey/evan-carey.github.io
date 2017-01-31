@@ -2,12 +2,11 @@ import { Router, Event, NavigationStart } from '@angular/router';
 import { MdSidenav } from '@angular/material';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import './app.scss';
-import './material-theme.scss';
 
 @Component({
     selector: 'ec-app',
     templateUrl: './app.component.html',
+    styleUrls: ['app.component.scss'],
     host: {
         '(window:resize)': 'onResize($event)'
     }

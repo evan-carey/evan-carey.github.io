@@ -5,13 +5,13 @@
     <span>Evan Carey</span>
 </md-toolbar>
 <md-nav-list>
-    <a md-list-item *ngFor="let item of menuItems" [routerLink]="item.link" routerLinkActive="router-link-active">
-        <md-icon class="align-left" md-list-avatar>{{item.icon}}</md-icon>
+    <a md-list-item *ngFor="let item of menuItems" [routerLink]="item.link" [routerLinkActive]="['router-link-active']">
+        <md-icon class="sidebar-icon" md-list-avatar>{{item.icon}}</md-icon>
         {{item.caption}}
     </a>
     <md-divider></md-divider>
     <a md-list-item *ngFor="let item of externalLinks" [href]="item.link" target="_blank">
-        <md-icon class="align-left" md-list-avatar [svgSrc]="item.iconSvgSrc"></md-icon>
+        <md-icon class="sidebar-icon" md-list-avatar [svgIcon]="item.iconSvgSrc"></md-icon>
         {{item.caption}}
     </a>
 </md-nav-list>
