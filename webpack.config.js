@@ -17,7 +17,7 @@ var getPath = function (pathToFile) { return path.resolve(__dirname, pathToFile)
 var hasProcessFlag = function (flag) { return process.argv.join('').indexOf(flag) > -1; }
 
 var ENV = process.env.npm_lifecycle_event;
-var isProd = ENV === 'build';
+var isProd = hasProcessFlag('prod');
 
 var HMR = hasProcessFlag('hot');
 
