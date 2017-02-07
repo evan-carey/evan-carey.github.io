@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MdIconRegistry } from '@angular/material';
 
-
 class MenuItem {
     constructor(
         public caption: string,
@@ -15,7 +14,7 @@ class ExternalLink {
     constructor(
         public caption: string,
         public link: string,
-        public iconSvgSrc: string
+        public iconClass: string
     ) { }
 }
 
@@ -39,12 +38,12 @@ export class SidebarComponent implements OnInit {
             // new MenuItem('Blog', ['/blog'], 'chat'),
         ];
 
-        this.mdIconRegistry.addSvgIcon('linkedin', this.sanitizer.bypassSecurityTrustResourceUrl('../../../img/linkedin.svg'));
-        this.mdIconRegistry.addSvgIcon('github', this.sanitizer.bypassSecurityTrustResourceUrl('../../../img/mark-github.svg'));
+        // this.mdIconRegistry.addSvgIcon('linkedin', this.sanitizer.bypassSecurityTrustResourceUrl('../../../img/linkedin.svg'));
+        // this.mdIconRegistry.addSvgIcon('github', this.sanitizer.bypassSecurityTrustResourceUrl('../../../img/mark-github.svg'));
 
         this.externalLinks = [
-            new ExternalLink('LinkedIn', 'https://linkedin.com/in/evancarey', 'linkedin'),
-            new ExternalLink('GitHub', 'https://github.com/evan-carey', 'github')
+            new ExternalLink('LinkedIn', 'https://linkedin.com/in/evancarey', 'linkedin-icon'),
+            new ExternalLink('GitHub', 'https://github.com/evan-carey', 'github-icon')
 
         ];
     }

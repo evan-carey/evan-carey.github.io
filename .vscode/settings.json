@@ -7,7 +7,8 @@
         "app.css": true,
         "app.js": true,
         "polyfills.js": true,
-        "vendor.js": true
+        "vendor.js": true,
+        "**/*.bundle.*": true
     },
     "search.exclude": {
         "**/*.map": true,
@@ -16,7 +17,8 @@
         "app.css": true,
         "app.js": true,
         "polyfills.js": true,
-        "vendor.js": true
+        "vendor.js": true,
+        "**/*.bundle.*": true
     },
     "tslint.run": "onSave",
     "autoimport.filesToScan": "src/**/*.ts",

@@ -216,7 +216,7 @@ module.exports = function makeWebpackConfig() {
             // Minifiy all JS, switch loaders to minimizing mode
             new UglifyJsPlugin({
                 beautify: false,
-                sourceMap: false,
+                sourceMap: true,
                 output: {
                     comments: false
                 },

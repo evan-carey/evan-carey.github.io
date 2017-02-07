@@ -4,10 +4,11 @@
   "description": "Evan Carey's personal website",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --bail --progress --profile --env prod",
-    "server": "webpack-dev-server --progress --profile --watch --content-base src/ --env dev",
-    "start": "npm run server",
-    "prod": "nodemon server.js"
+    "build:prod": "webpack --bail --progress --profile --env prod",
+    "server:dev": "webpack-dev-server --progress --profile --watch --content-base src/ --env dev",
+    "server:prod": "nodemon server.js",
+    "start": "npm run server:dev",
+    "prod": "npm run build:prod && npm run server:prod"
   },
   "repository": {
     "type": "git",
