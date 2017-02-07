@@ -123,19 +123,22 @@ module.exports = function makeWebpackConfig() {
                 test: /\.scss$/,
                 include: getPath("src/app"),
                 use: isProd ?
-                    ExtractTextPlugin.extract({
-                        fallbackLoader: 'style-loader',
-                        loader: [
-                            {
-                                loader: 'css-loader',
-                                options: {
-                                    importLoaders: 2
-                                }
-                            },
-                            'postcss-loader',
-                            'sass-loader'
-                        ]
-                    }) :
+                    // ExtractTextPlugin.extract({
+                    // fallbackLoader: 'style-loader',
+                    // loader:
+                    [
+                        'to-string-loader',
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                importLoaders: 2
+                            }
+                        },
+                        'postcss-loader',
+                        'sass-loader'
+                    ]
+                    // })
+                    :
                     [
                         'to-string-loader',
                         {
