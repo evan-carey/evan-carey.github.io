@@ -1,6 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MdIconRegistry } from '@angular/material';
+import { Component, OnInit } from '@angular/core';
 
 class MenuItem {
     constructor(
@@ -27,7 +25,7 @@ export class SidebarComponent implements OnInit {
     menuItems: Array<MenuItem>;
     externalLinks: Array<ExternalLink>;
 
-    constructor(private mdIconRegistry: MdIconRegistry, private sanitizer: DomSanitizer) {
+    constructor() {
     }
 
     ngOnInit() {
@@ -36,10 +34,8 @@ export class SidebarComponent implements OnInit {
             // new MenuItem('About', ['/about'], 'info'),
             new MenuItem('Projects', ['/projects'], 'code'),
             // new MenuItem('Blog', ['/blog'], 'chat'),
+            new MenuItem('Fun Stuff', ['/graphics'], 'blur_on')
         ];
-
-        // this.mdIconRegistry.addSvgIcon('linkedin', this.sanitizer.bypassSecurityTrustResourceUrl('../../../img/linkedin.svg'));
-        // this.mdIconRegistry.addSvgIcon('github', this.sanitizer.bypassSecurityTrustResourceUrl('../../../img/mark-github.svg'));
 
         this.externalLinks = [
             new ExternalLink('LinkedIn', 'https://linkedin.com/in/evancarey', 'linkedin-icon'),

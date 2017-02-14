@@ -3,7 +3,10 @@
 		<ec-sidebar></ec-sidebar>
 	</md-sidenav>
 	<main>
-		<ec-nav [sidenav]="sidenav" [showMenuButton]="sidenav._modeOver"></ec-nav>
+		<!--<ec-nav [sidenav]="sidenav" [showMenuButton]="sidenav._modeOver"></ec-nav>-->
+		<button md-icon-button (click)="sidenav.open()" *ngIf="sidenav._modeOver" class="sidebar-button">
+			<md-icon class="material-icons">menu</md-icon>
+		</button>
 		<section>
 			<div class="page-content">
 				<router-outlet></router-outlet>

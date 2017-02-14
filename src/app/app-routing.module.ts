@@ -17,6 +17,10 @@ const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
     { path: 'projects', component: ProjectsComponent },
+    {
+        path: 'graphics',
+        loadChildren: 'app/+graphics#GraphicsModule'
+    },
     { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
 ]
 
