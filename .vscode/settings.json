@@ -20,21 +20,8 @@
         "vendor.js": true,
         "**/*.bundle.*": true
     },
+    "editor.formatOnSave": true,
     "tslint.run": "onSave",
     "autoimport.filesToScan": "src/**/*.ts",
-    "autoimport.spaceBetweenBraces": true,
-    "genGetSet.spacedImportLine": true,
-    "genGetSet.scanOnSave": true,
-    "genGetSet.filter": true,
-    "genGetSet.ignoredDictionaryList": [
-        "vscode",
-        "tsconfig"
-    ],
-    "genGetSet.pathStringDelimiter": "'",
-    "genGetSet.ignoredNodeLibraries": [
-        "node",
-        "chrome"
-    ],
-    "genGetSet.importTypings": false,
-    "genGetSet.importNode": true
+    "autoimport.spaceBetweenBraces": true
 }

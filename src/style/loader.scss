@@ -1,108 +1,49 @@
-.loader {
-  position: absolute;
-  top: 40%;
-  left: 45%;
-  font-size: 24px;
-  display: block;
-  text-align: center;
-  font-weight: 700;
-}
-
 .center-align {
-  position: absolute;
-  top: calc(50% - 9px);
-  left: calc(50% - 109px);
+  	display: flex;
+  	align-items: center;
+	justify-content: center;
+	height: 100%;
 }
 
-#loadingProgressG{
-	width:218px;
-	height:17px;
-	overflow:hidden;
-	background-color:rgba(0,0,0,0.48);
-	margin:auto;
-	border-radius:8px;
-		-o-border-radius:8px;
-		-ms-border-radius:8px;
-		-webkit-border-radius:8px;
-		-moz-border-radius:8px;
+// Here is where the magic happens
+
+$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+  	animation: rotator $duration linear infinite;
 }
 
-.loadingProgressG{
-	background-color:rgba(255,255,255,0.82);
-	margin-top:0;
-	margin-left:-218px;
-	animation-name:bounce_loadingProgressG;
-		-o-animation-name:bounce_loadingProgressG;
-		-ms-animation-name:bounce_loadingProgressG;
-		-webkit-animation-name:bounce_loadingProgressG;
-		-moz-animation-name:bounce_loadingProgressG;
-	animation-duration:1.5s;
-		-o-animation-duration:1.5s;
-		-ms-animation-duration:1.5s;
-		-webkit-animation-duration:1.5s;
-		-moz-animation-duration:1.5s;
-	animation-iteration-count:infinite;
-		-o-animation-iteration-count:infinite;
-		-ms-animation-iteration-count:infinite;
-		-webkit-animation-iteration-count:infinite;
-		-moz-animation-iteration-count:infinite;
-	animation-timing-function:linear;
-		-o-animation-timing-function:linear;
-		-ms-animation-timing-function:linear;
-		-webkit-animation-timing-function:linear;
-		-moz-animation-timing-function:linear;
-	width:218px;
-	height:17px;
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
 }
 
-
-
-@keyframes bounce_loadingProgressG{
-	0%{
-		margin-left:-218px;
-	}
-
-	100%{
-		margin-left:218px;
-	}
+.path {
+	stroke-dasharray: $offset;
+	stroke-dashoffset: 0;
+	transform-origin: center;
+	animation:
+		dash $duration ease-in-out infinite,
+		colors ($duration*4) ease-in-out infinite;
 }
 
-@-o-keyframes bounce_loadingProgressG{
-	0%{
-		margin-left:-218px;
-	}
-
-	100%{
-		margin-left:218px;
-	}
+@keyframes colors {
+	0% { stroke: #4285F4; }
+	25% { stroke: #DE3E35; }
+	50% { stroke: #F7C223; }
+	75% { stroke: #1B9A59; }
+  	100% { stroke: #4285F4; }
 }
 
-@-ms-keyframes bounce_loadingProgressG{
-	0%{
-		margin-left:-218px;
+@keyframes dash {
+	0% { stroke-dashoffset: $offset; }
+	50% {
+		stroke-dashoffset: $offset/4;
+		transform:rotate(135deg);
 	}
-
-	100%{
-		margin-left:218px;
-	}
-}
-
-@-webkit-keyframes bounce_loadingProgressG{
-	0%{
-		margin-left:-218px;
-	}
-
-	100%{
-		margin-left:218px;
-	}
-}
-
-@-moz-keyframes bounce_loadingProgressG{
-	0%{
-		margin-left:-218px;
-	}
-
-	100%{
-		margin-left:218px;
+	100% {
+		stroke-dashoffset: $offset;
+		transform:rotate(450deg);
 	}
 }

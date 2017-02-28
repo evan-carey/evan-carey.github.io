@@ -19,6 +19,8 @@ export class RendererService {
         const width = container.clientWidth;
         const height = container.clientHeight;
 
+        console.log(width, height);
+
         this.renderer = new WebGLRenderer({
             antialias: true,
             alpha: true
