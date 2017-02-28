@@ -4,16 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'ec-graphics',
     templateUrl: 'graphics.component.html',
-    styles: [`
-        .container {
-            // display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: 0;
-        }
-    `]
+    styleUrls: ['graphics.component.scss']
 })
 export class GraphicsComponent implements OnInit {
     container: Observable<any>;
