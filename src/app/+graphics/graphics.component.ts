@@ -1,10 +1,12 @@
+import { RendererService } from './renderer/renderer.service';
 import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'ec-graphics',
     templateUrl: 'graphics.component.html',
-    styleUrls: ['graphics.component.scss']
+    styleUrls: ['graphics.component.scss'],
+    providers: [RendererService]
 })
 export class GraphicsComponent implements OnInit {
     container: Observable<any>;

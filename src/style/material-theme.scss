@@ -81,3 +81,13 @@ $ec-app-warn: mat-palette($mat-red);
 $ec-app-theme: mat-light-theme($ec-app-primary, $ec-app-accent, $ec-app-warn);
 
 @include angular-material-theme($ec-app-theme);
+
+.dark-theme {
+    $dark-primary: mat-palette($mat-blue-grey);
+    $dark-accent: mat-palette($mat-amber, A200, A100, A400);
+    $dark-warn: mat-palette($mat-deep-orange);
+
+    $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+    @include angular-material-theme($dark-theme);
+}

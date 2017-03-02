@@ -1,4 +1,4 @@
-import { Router, Event, NavigationStart } from '@angular/router';
+import { Router, Event, NavigationStart, ActivatedRoute } from '@angular/router';
 import { MdSidenav } from '@angular/material';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
@@ -14,7 +14,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class AppComponent implements OnInit {
     @ViewChild(MdSidenav) sidenav: MdSidenav;
 
-    constructor(private router: Router) {
+    constructor(private route: ActivatedRoute, private router: Router) {
     }
 
     ngOnInit() {
@@ -45,6 +45,7 @@ export class AppComponent implements OnInit {
             if (event instanceof NavigationStart && this.sidenav.mode === "over") {
                 this.sidenav.close();
             }
+            console.log(this.route.url);
         })
     }
 }
