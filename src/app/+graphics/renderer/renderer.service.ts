@@ -23,8 +23,10 @@ export class RendererService {
 
     init(container: HTMLElement) {
         this.container = container;
-        const width = container.clientWidth;
-        const height = container.clientHeight;
+        // const width = container.clientWidth;
+        // const height = container.clientHeight;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
 
         console.log(width, height);
 

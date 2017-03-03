@@ -1,4 +1,4 @@
-import { Router, Event, NavigationStart, ActivatedRoute } from '@angular/router';
+import { Router, Event, NavigationStart, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { MdSidenav } from '@angular/material';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
@@ -14,7 +14,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class AppComponent implements OnInit {
     @ViewChild(MdSidenav) sidenav: MdSidenav;
 
-    constructor(private route: ActivatedRoute, private router: Router) {
+    constructor(private router: Router) {
     }
 
     ngOnInit() {
@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
     }
 
     onResize(event: any) {
+        if (this.router.url == '/graphics') return;
         if (this.sidenav._modeOver && event.target.innerWidth >= 960) {
             this.sidenav.mode = "side";
             this.sidenav.open();
@@ -45,7 +46,14 @@ export class AppComponent implements OnInit {
             if (event instanceof NavigationStart && this.sidenav.mode === "over") {
                 this.sidenav.close();
             }
-            console.log(this.route.url);
+            if (event instanceof NavigationEnd) {
+                if (this.router.url == '/graphics') {
+                    // console.log(this.router.url);
+                    this.sidenav.mode = "over";
+                    this.sidenav.close();
+                    // this.sidenav.
+                }
+            }
         })
     }
 }
