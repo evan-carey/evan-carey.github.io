@@ -2,9 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material'
-
-import './core/rxjs-extensions';
+import { mat } from '@angular/material'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found.component';
@@ -17,7 +15,6 @@ import { CoreModule } from './core/core.module';
     imports: [
         BrowserModule,
         HttpModule,
-        MaterialModule.forRoot(),
         AppRoutingModule,
         CoreModule,
         CommonModule

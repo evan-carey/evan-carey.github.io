@@ -1,4 +1,4 @@
-import { MdSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
     templateUrl: './nav.component.html'
 })
 export class NavComponent implements OnInit {
-    @Input() sidenav: MdSidenav;
+    @Input() sidenav: MatSidenav;
     @Input() showMenuButton: boolean;
 
     constructor() { }

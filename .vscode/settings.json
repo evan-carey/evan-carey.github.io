@@ -1,48 +1,24 @@
 {
-    "typescript.tsdk": "./node_modules/typescript/lib",
-    "files.exclude": {
-        "**/*.map": true,
-        "**/node_modules": true,
-        "index.html": true,
-        "app.css": true,
-        "app.js": true,
-        "polyfills.js": true,
-        "vendor.js": true,
-        "**/*.bundle.*": true
-    },
-    "search.exclude": {
-        "**/*.map": true,
-        "**/node_modules": true,
-        "index.html": true,
-        "app.css": true,
-        "app.js": true,
-        "polyfills.js": true,
-        "vendor.js": true,
-        "**/*.bundle.*": true
-    },
-    // Auto Import extension "steoates.autoimport"
-    "autoimport.filesToScan": "src/**/*.ts",
-    "autoimport.autoComplete": true,
-    "autoimport.spaceBetweenBraces": true,
-    // requires extension "VSCode simpler Icons with Angular"
-    "workbench.iconTheme": "vscode-simpler-icons",
-    "tslint.run": "onSave",
-    // TypeScript Hero settings
-    "typescriptHero.resolver.insertSemicolons": true,
-    "typescriptHero.resolver.insertSpaceBeforeAndAfterImportBraces": true,
-    "typescriptHero.resolver.multiLineWrapThreshold": 120,
-    "typescriptHero.resolver.newImportLocation": "TopOfFile",
-    "typescriptHero.restartDebugger.watchFolders": [
-        "build",
-        "out",
-        "dist"
-    ],
-    "typescriptHero.resolver.pathStringDelimiter": "'",
-    "typescriptHero.resolver.ignorePatterns": [
-        "build",
-        "out",
-        "dist"
-    ],
-    "editor.formatOnSave": true,
-    "autoimport.showNotifications": false
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "files.exclude": {
+    "**/*.map": true,
+    "**/node_modules": true,
+    "index.html": true,
+    "app.css": true,
+    "app.js": true,
+    "polyfills.js": true,
+    "vendor.js": true,
+    "**/*.bundle.*": true
+  },
+  "search.exclude": {
+    "**/*.map": true,
+    "**/node_modules": true,
+    "index.html": true,
+    "app.css": true,
+    "app.js": true,
+    "polyfills.js": true,
+    "vendor.js": true,
+    "**/*.bundle.*": true,
+    "package-lock.json": true
+  }
 }

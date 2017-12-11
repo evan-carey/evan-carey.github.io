@@ -1,41 +1,19 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
         "moduleResolution": "node",
-        "noImplicitAny": false,
-        "removeComments": true,
-        "noLib": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "sourceMap": true,
-        "noEmit": true,
-        "strictNullChecks": false,
-        "baseUrl": "./src",
-        "paths": {},
-        "lib": [
-            "es2015",
-            "dom"
-        ],
+        "target": "es5",
         "typeRoots": [
-            "./node_modules/@types"
+          "node_modules/@types"
         ],
-        "types": [
-            "node",
-            "hammerjs"
+        "lib": [
+          "es2017",
+          "dom"
         ]
     },
-    "compileOnSave": false,
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "src/**/*.spec.ts",
-        "src/**/*.e2e.ts"
-    ],
-    "awesomeTypescriptLoaderOptions": {
-        "useWebpackText": true
-    },
-    "buildOnSave": false
+    "compileOnSave": false
 }

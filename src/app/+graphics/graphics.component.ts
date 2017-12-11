@@ -1,6 +1,7 @@
 import { RendererService } from './renderer/renderer.service';
 import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
+import 'rxjs/add/observable/fromEvent';
 
 @Component({
     selector: 'ec-graphics',
